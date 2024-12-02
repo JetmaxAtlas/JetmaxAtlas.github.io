@@ -1,70 +1,99 @@
+
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 <head>
   <meta charset="UTF-8">
 
-  <title>Memory Game</title>
+  <title>Jeu de mémoire</title>
 
   <link rel="stylesheet" href="CSS/style.css">
-  <script src="Java/script.js"></script>
 </head>
 <body>
+  
+  <div id="win" class="win ">
+    <H2>Vous avec gagné</H2>
+    <span id="Score"></span>
+  </div>
+
+  <dialog id="dialog">
+    <div class="dialog-content">
+        <h1 class="titre">Projet Personel</h1>
+        <h3 class="ligne">Design Web groupe 1 - Automne 2024</h3>
+          <div class="Presentation">
+            <h2>Réaliser par :</h2>
+            <h3>Maxime Vallières</h3>
+            <h2>Inspiration :</h2>
+            <a href="https://github.com/code-sketch/memory-game"><h3>https://github.com/code-sketch/memory-game</h3></a>
+          </div>
+          <img src="img/alsenic.jpg" id="alsenic" alt="alsenic" style="max-width: 100%; height: auto;">
+        <button id="close-btn">Fermer</button>
+        <p>
+          <input type="checkbox" id="no-show" /> Ne plus afficher cette fenêtre
+        </p>
+    </div>
+ </dialog>
+
+
   <section class="memory-game">
-    <div class="memory-card" data-framework="aurelia">
-      <img class="front-face" src="../img/aurelia.svg" alt="Aurelia" />
-      <img class="back-face" src="img/js-badge.svg" alt="JS Badge" />
+    
+    <img src="https://see.fontimg.com/api/rf5/15Lv/YzI5NjcxYWE4YjIwNGViYTgzMmJlY2ZmNDI1NmQ4MmIub3Rm/SmV1eCBkZSBtZW1vaXJl/the-wild-breath-of-zelda.png?r=fs&h=84&w=1250&fg=000000&bg=FFFFFF&tb=1&s=67" alt="Zelda fonts">
+    
+    <div class="memory-card" data-framework="link">
+      <img class="front-face" src="img/link.avif" alt="Link" />
+      <img class="back-face" src="img/logoZelda.webp" alt="Logo Zelda" />
     </div>
-    <div class="memory-card" data-framework="aurelia">
-      <img class="front-face" src="../img/aurelia.svg" alt="Aurelia" />
-      <img class="back-face" src="img/js-badge.svg" alt="JS Badge" />
-    </div>
-
-    <div class="memory-card" data-framework="vue">
-      <img class="front-face" src="../img/vue.svg" alt="Vue" />
-      <img class="back-face" src="img/js-badge.svg" alt="JS Badge" />
-    </div>
-    <div class="memory-card" data-framework="vue">
-      <img class="front-face" src="../img/vue.svg" alt="Vue" />
-      <img class="back-face" src="img/js-badge.svg" alt="JS Badge" />
+    <div class="memory-card" data-framework="link">
+      <img class="front-face" src="img/link.avif" alt="Link" />
+      <img class="back-face" src="img/logoZelda.webp" alt="Logo Zelda" />
     </div>
 
-    <div class="memory-card" data-framework="angular">
-      <img class="front-face" src="../img/angular.svg" alt="Angular" />
-      <img class="back-face" src="img/js-badge.svg" alt="JS Badge" />
+    <div class="memory-card" data-framework="sword">
+      <img class="front-face" src="img/Sword.webp" alt="Sword" />
+      <img class="back-face" src="img/logoZelda.webp" alt="Logo Zelda" />
     </div>
-    <div class="memory-card" data-framework="angular">
-      <img class="front-face" src="../img/angular.svg" alt="Angular" />
-      <img class="back-face" src="img/js-badge.svg" alt="JS Badge" />
-    </div>
-
-    <div class="memory-card" data-framework="ember">
-      <img class="front-face" src="../img/ember.svg" alt="Ember" />
-      <img class="back-face" src="img/js-badge.svg" alt="JS Badge" />
-    </div>
-    <div class="memory-card" data-framework="ember">
-      <img class="front-face" src="../img/ember.svg" alt="Ember" />
-      <img class="back-face" src="img/js-badge.svg" alt="JS Badge" />
+    <div class="memory-card" data-framework="sword">
+      <img class="front-face" src="img/Sword.webp" alt="Sword" />
+      <img class="back-face" src="img/logoZelda.webp" alt="Logo Zelda" />
     </div>
 
-    <div class="memory-card" data-framework="backbone">
-      <img class="front-face" src="../img/backbone.svg" alt="Backbone" />
-      <img class="back-face" src="img/js-badge.svg" alt="JS Badge" />
+    <div class="memory-card" data-framework="zelda">
+      <img class="front-face" src="img/Zelda.webp" alt="Zelda" />
+      <img class="back-face" src="img/logoZelda.webp" alt="Logo Zelda" />
     </div>
-    <div class="memory-card" data-framework="backbone">
-      <img class="front-face" src="../img/backbone.svg" alt="Backbone" />
-      <img class="back-face" src="img/js-badge.svg" alt="JS Badge" />
+    <div class="memory-card" data-framework="zelda">
+      <img class="front-face" src="img/Zelda.webp" alt="Zelda" />
+      <img class="back-face" src="img/logoZelda.webp" alt="Logo Zelda" />
+    </div>
+
+    <div class="memory-card" data-framework="rubis">
+      <img class="front-face" src="img/Rubis_Vert.webp" alt="Rubis" />
+      <img class="back-face" src="img/logoZelda.webp" alt="Logo Zelda" />
+    </div>
+    <div class="memory-card" data-framework="rubis">
+      <img class="front-face" src="img/Rubis_Vert.webp" alt="Rubis" />
+      <img class="back-face" src="img/logoZelda.webp" alt="Logo Zelda" />
+    </div>
+
+    <div class="memory-card" data-framework="bouclier">
+      <img class="front-face" src="img/hylian-shield.webp" alt="Bouclier" />
+      <img class="back-face" src="img/logoZelda.webp" alt="Logo Zelda" />
+    </div>
+    <div class="memory-card" data-framework="bouclier">
+      <img class="front-face" src="img/hylian-shield.webp" alt="Bouclier" />
+      <img class="back-face" src="img/logoZelda.webp" alt="Logo Zelda" />
     </div>
 
     <div class="memory-card" data-framework="react">
-      <img class="front-face" src="../img/react.svg" alt="React" />
-      <img class="back-face" src="img/js-badge.svg" alt="JS Badge" />
+      <img class="front-face" src="img/Triforc.webp" alt="React" />
+      <img class="back-face" src="img/logoZelda.webp" alt="Logo Zelda" />
     </div>
     <div class="memory-card" data-framework="react">
-      <img class="front-face" src="../img/react.svg" alt="React" />
-      <img class="back-face" src="img/js-badge.svg" alt="JS Badge" />
+      <img class="front-face" src="img/Triforc.webp" alt="React" />
+      <img class="back-face" src="img/logoZelda.webp" alt="Logo Zelda" />
     </div>
   </section>
 
-  
+
+  <script defer src="Java/script.js"></script>
 </body>
 </html>

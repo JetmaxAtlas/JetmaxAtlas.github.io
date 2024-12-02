@@ -1,8 +1,18 @@
 const cards = document.querySelectorAll('.memory-card');
+const gagner = document.getElementById('win')
+
+
+
+let CarteDevoiler = 0;
+let reussir = 0;
+
 
 let hasFlippedCard = false;
 let lockBoard = false;
 let firstCard, secondCard;
+
+
+
 
 function flipCard() {
   if (lockBoard) return;
@@ -61,3 +71,34 @@ function resetBoard() {
 })();
 
 cards.forEach(card => card.addEventListener('click', flipCard));
+
+function checkForMatch() {
+  let isMatch = firstCard.dataset.framework === secondCard.dataset.framework;
+
+  isMatch ? disableCards() : unflipCards();
+}
+
+function disableCards() {
+  firstCard.removeEventListener('click', flipCard);
+  secondCard.removeEventListener('click', flipCard);
+
+  resetBoard();
+}
+
+window.onload = function() {
+  const dialog = document.getElementById('dialog');
+  const closeBtn = document.getElementById('close-btn');
+  const noShowCheckbox = document.getElementById('no-show');
+  
+  if (!localStorage.getItem('noShowModal')!= 'true') {
+    dialog.showModal()
+  }
+  
+
+  closeBtn.onclick = function() {
+    dialog.close()
+    if (noShowCheckbox.checked) {
+        localStorage.setItem('noShowModal', 'true');
+    }
+};
+};

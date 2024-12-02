@@ -6,8 +6,9 @@
   
   body {
     height: 100vh;
-    display: flex;
-    background: #060AB2;
+    
+    background: linear-gradient(0deg, rgba(34,193,195,1) 0%, rgb(3, 205, 27) 100%);
+    background-repeat: round ;
   }
   
   .memory-game {
@@ -46,10 +47,80 @@
     padding: 20px;
     position: absolute;
     border-radius: 5px;
-    background: #1C7CCC;
+    background:  black;
     backface-visibility: hidden;
   }
   
   .front-face {
     transform: rotateY(180deg);
   }
+
+.win{
+    margin-top: 150px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 10px;
+    width: 200px;
+    border: solid black 2px;
+    background-color: white;
+    max-height: 300px;
+    
+  }
+
+
+.titre{
+ display: flex;
+ justify-content: center;
+ font-size: 2.5em;
+ align-self: center;
+ border-bottom:3px solid black;
+}
+
+
+#dialog {
+  position: fixed; 
+  left: 0; 
+  top: 0; 
+  margin-left: 250px;
+  margin-top: 50px;
+  width: 70%; 
+  height: 80%; 
+  justify-content: center; 
+  align-items: center; 
+  border-radius: 10% / 50%;
+}
+.dialog-content {
+  background-color: white; 
+  padding: 20px; 
+  border-radius: 5px; 
+  text-align: center; 
+}
+#close-btn {
+  width: 60%;
+  height: 90%;
+  margin-top: 10px;
+  padding: 10px 20px; 
+  cursor: pointer; 
+}
+::backdrop{
+  background-image: linear-gradient(
+    45deg,
+    magenta,
+    rebeccapurple,
+    dodgerblue,
+    green
+  );
+  opacity: 0.75;
+}
+
+#alsenic{
+  display: flex;
+  justify-content: flex-end;
+  width: 250px;
+}
+.Presentation{
+  display: flex;
+  justify-content: flex-start;
+  flex-direction: column;
+}
