@@ -1,17 +1,35 @@
 const cards = document.querySelectorAll('.memory-card');
-const gagner = document.getElementById('win')
+const gagner = document.getElementById('winDialog')
+const dialog = document.getElementById('dialog');
+const closeBtn = document.getElementById('close-btn');
+const noShowCheckbox = document.getElementById('no-show');
+const score = document.getElementById('Score');
 
-
+const rejouer = document.getElementById('Rejouer');
+const continuer = document.getElementById('Continuer');
 
 let CarteDevoiler = 0;
 let reussir = 0;
 
+const url = "https://www.youtube.com/watch?v=xvFZjo5PgG0"
 
 let hasFlippedCard = false;
 let lockBoard = false;
 let firstCard, secondCard;
 
 
+
+rejouer.addEventListener("click", reload)
+continuer.addEventListener("click", Suite)
+
+function reload(){
+  location.reload();
+  gagner.close();
+}
+
+function Suite(){
+ open('https://www.youtube.com/watch?v=eaDeTV-LLYA');
+}
 
 
 function flipCard() {
@@ -36,6 +54,14 @@ function flipCard() {
 
 function checkForMatch() {
   let isMatch = firstCard.dataset.framework === secondCard.dataset.framework;
+  CarteDevoiler = CarteDevoiler + 1;
+
+  if(reussir == 5){
+    gagner.showModal();
+    score.textContent = (CarteDevoiler);
+  }
+
+
 
   isMatch ? disableCards() : unflipCards();
 }
@@ -43,6 +69,8 @@ function checkForMatch() {
 function disableCards() {
   firstCard.removeEventListener('click', flipCard);
   secondCard.removeEventListener('click', flipCard);
+
+  reussir = reussir + 1;
 
   resetBoard();
 }
@@ -72,28 +100,15 @@ function resetBoard() {
 
 cards.forEach(card => card.addEventListener('click', flipCard));
 
-function checkForMatch() {
-  let isMatch = firstCard.dataset.framework === secondCard.dataset.framework;
-
-  isMatch ? disableCards() : unflipCards();
-}
-
-function disableCards() {
-  firstCard.removeEventListener('click', flipCard);
-  secondCard.removeEventListener('click', flipCard);
-
-  resetBoard();
-}
 
 window.onload = function() {
-  const dialog = document.getElementById('dialog');
-  const closeBtn = document.getElementById('close-btn');
-  const noShowCheckbox = document.getElementById('no-show');
+
+  gagner.close();
   
-  if (!localStorage.getItem('noShowModal')!= 'true') {
+  if (localStorage.getItem('noShowModal') !== 'true') {
     dialog.showModal()
   }
-  
+  localStorage.setItem('noShowModal', 'true');
 
   closeBtn.onclick = function() {
     dialog.close()

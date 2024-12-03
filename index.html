@@ -10,23 +10,35 @@
 </head>
 <body>
   
-  <div id="win" class="win ">
-    <H2>Vous avec gagné</H2>
-    <span id="Score"></span>
-  </div>
+  <dialog id="winDialog">
+    <div id="win" class="win ">
+      <H1>Vous avec gagné</H1>
+      <h2>Nombre de tour </h2>
+      <span id="Score"></span>
+      <button id="Rejouer">Rejouer</button>
+      <button id="Continuer">Continuer</button>
+      
+    </div>
+  </dialog>
+ 
 
   <dialog id="dialog">
     <div class="dialog-content">
         <h1 class="titre">Projet Personel</h1>
         <h3 class="ligne">Design Web groupe 1 - Automne 2024</h3>
-          <div class="Presentation">
-            <h2>Réaliser par :</h2>
-            <h3>Maxime Vallières</h3>
-            <h2>Inspiration :</h2>
-            <a href="https://github.com/code-sketch/memory-game"><h3>https://github.com/code-sketch/memory-game</h3></a>
-          </div>
-          <img src="img/alsenic.jpg" id="alsenic" alt="alsenic" style="max-width: 100%; height: auto;">
-        <button id="close-btn">Fermer</button>
+        <div class="grid_container">
+           <div class="Presentation grid_item">
+
+              <h2>Réaliser par :</h2>
+              <h3>Maxime Vallières</h3>
+              <h2>Inspiration :</h2>
+              <a href="https://github.com/code-sketch/memory-game"><h3>https://github.com/code-sketch/memory-game</h3></a>
+
+           </div>
+           <img src="img/alsenic.jpg" id="alsenic" class="grid_item" alt="alsenic" style="max-width: 100%; height: auto;">
+        </div>
+      
+        <button id="close-btn"><b>Fermer</b></button>
         <p>
           <input type="checkbox" id="no-show" /> Ne plus afficher cette fenêtre
         </p>
