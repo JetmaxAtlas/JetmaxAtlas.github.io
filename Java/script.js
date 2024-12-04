@@ -1,17 +1,20 @@
 const cards = document.querySelectorAll('.memory-card');
+
 const gagner = document.getElementById('winDialog')
+const score = document.getElementById('Score');
+const rejouer = document.getElementById('Rejouer');
+const tutoriel = document.getElementById('Tutoriel');
+
 const dialog = document.getElementById('dialog');
 const closeBtn = document.getElementById('close-btn');
-const noShowCheckbox = document.getElementById('no-show');
-const score = document.getElementById('Score');
+const noShowButton = document.getElementById('no-show');
 
-const rejouer = document.getElementById('Rejouer');
-const continuer = document.getElementById('Continuer');
+
+
 
 let CarteDevoiler = 0;
 let reussir = 0;
 
-const url = "https://www.youtube.com/watch?v=xvFZjo5PgG0"
 
 let hasFlippedCard = false;
 let lockBoard = false;
@@ -20,15 +23,19 @@ let firstCard, secondCard;
 
 
 rejouer.addEventListener("click", reload)
-continuer.addEventListener("click", Suite)
-
+tutoriel.addEventListener("click", Tuto)
+/**
+ * Si le bouton est clicker relancer la page.
+ */
 function reload(){
   location.reload();
   gagner.close();
 }
-
-function Suite(){
- open('https://www.youtube.com/watch?v=eaDeTV-LLYA');
+/**
+ * Ouvre la page du tutoriel du jeux de carte 
+ */
+function Tuto(){
+ open('https://medium.com/free-code-camp/vanilla-javascript-tutorial-build-a-memory-game-in-30-minutes-e542c4447eae');
 }
 
 
@@ -100,20 +107,26 @@ function resetBoard() {
 
 cards.forEach(card => card.addEventListener('click', flipCard));
 
-
+/**
+ * Quand la page va se charger mettre le dialogue de victoire à fermer
+ * et vérifier si il faut afficher le dialogue de présentation.
+ */
 window.onload = function() {
 
   gagner.close();
+
   
   if (localStorage.getItem('noShowModal') !== 'true') {
     dialog.showModal()
   }
-  localStorage.setItem('noShowModal', 'true');
-
+  
   closeBtn.onclick = function() {
     dialog.close()
-    if (noShowCheckbox.checked) {
-        localStorage.setItem('noShowModal', 'true');
-    }
 };
+
+noShowButton.onclick = function(){
+  localStorage.setItem('noShowModal', 'true');
+  dialog.close()
+};
+
 };
