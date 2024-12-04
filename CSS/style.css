@@ -87,6 +87,8 @@
  justify-content: center;
  font-size: 2.5em;
  align-self: center;
+ border-bottom: #000000 2px 400px solid;
+ 
 }
 
 
@@ -94,11 +96,9 @@
   position: fixed; 
   left: 0; 
   top: 0; 
-  margin-left: 400px;
-  margin-right: 400px;
-  margin-top: 50px;
+  margin:auto;
   width: 50%; 
-  height: 80%; 
+  height: 70%; 
   justify-content: center; 
   align-items: center; 
   border-radius: 10% / 50%;
@@ -154,7 +154,7 @@ Span{
 }
 
 button{
-  margin-top: 15px;
+  margin-top: 30px;
   font-size: 1.5em;
 }
 #close-btn {
@@ -192,11 +192,8 @@ button{
 hr {
   border: none;
   border-top: 5px solid  rgb(2, 184, 157);
-  margin-left: 200px;
-  color: #000000;
-  text-align: center;
   height: 5px;
-  width: 425px;
+  width: auto;
 }
 #Rejouer,#Tutoriel{
   margin-top: 30px;
