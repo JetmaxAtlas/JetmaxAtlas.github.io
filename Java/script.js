@@ -46,14 +46,14 @@ function flipCard() {
   this.classList.add('flip');
 
   if (!hasFlippedCard) {
-    // first click
+    // premier click
     hasFlippedCard = true;
     firstCard = this;
 
     return;
   }
 
-  // second click
+  // deuxième click
   secondCard = this;
 
   checkForMatch();
@@ -67,8 +67,6 @@ function checkForMatch() {
     gagner.showModal();
     score.textContent = (CarteDevoiler);
   }
-
-
 
   isMatch ? disableCards() : unflipCards();
 }
@@ -114,7 +112,6 @@ cards.forEach(card => card.addEventListener('click', flipCard));
 window.onload = function() {
 
   gagner.close();
-
   
   if (localStorage.getItem('noShowModal') !== 'true') {
     dialog.showModal()
