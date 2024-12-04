@@ -12,7 +12,7 @@ const noShowButton = document.getElementById('no-show');
 
 
 
-let CarteDevoiler = 0;
+let = 0;
 let reussir = 0;
 
 
@@ -61,7 +61,7 @@ function flipCard() {
 
 function checkForMatch() {
   let isMatch = firstCard.dataset.framework === secondCard.dataset.framework;
-  CarteDevoiler = CarteDevoiler + 1;
+  carteDevoiler = carteDevoiler + 1;
 
   if(reussir == 5){
     gagner.showModal();
