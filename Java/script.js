@@ -12,7 +12,7 @@ const noShowButton = document.getElementById('no-show');
 
 
 
-let = 0;
+let carteDevoiler = 0;
 let reussir = 0;
 
 
@@ -65,7 +65,7 @@ function checkForMatch() {
 
   if(reussir == 5){
     gagner.showModal();
-    score.textContent = (CarteDevoiler);
+    score.textContent = (carteDevoiler);
   }
 
   isMatch ? disableCards() : unflipCards();
@@ -115,11 +115,11 @@ window.onload = function() {
   
   if (localStorage.getItem('noShowModal') !== 'true') {
     dialog.showModal()
-  }
+  };
   
   closeBtn.onclick = function() {
     dialog.close()
-};
+  };
 
 noShowButton.onclick = function(){
   localStorage.setItem('noShowModal', 'true');
